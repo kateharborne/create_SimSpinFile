@@ -9,9 +9,9 @@ from argparse import ArgumentParser
 # Define arguments ###
 parser = ArgumentParser()
 parser.add_argument("-i", "--infile", action="store", dest="inputFile", type=str, default=None,
-                    help="The path to the simulation file to be read")
+                    help="The path to the simulation file you wish to process with SimSpin")
 parser.add_argument("-o", "--outfile", action="store", dest="outputFile", type=str, default=None,
-                    help="The path to the SimSpin file to be produced")
+                    help="The path to the SimSpin HDF5 file produced")
 
 # Parse arguments ###
 args = parser.parse_args()
