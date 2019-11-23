@@ -178,14 +178,14 @@ if ptype[4] != 0:  # if there are ptype[4] = Stellar particles in the file
     mass4 = part4.create_dataset("Mass", data=ds["mass"].in_units('1e10 Msol')[pcount[3]:pcount[4]])
     mass4.attrs["Units"] = str(ds["mass"].in_units('1e10 Msol').units)
     mass4.attrs["PartNum"] = ptype[4]
-    imass4 = part4.create_dataset("InitialMass", data=ds["InitialMass"].in_units('1e10 Msol')[pcount[3]:pcount[4]])
-    imass4.attrs["Units"] = str(ds["InitialMass"].in_units('1e10 Msol').units)
+    imass4 = part4.create_dataset("InitialMass", data=ds.star["InitialMass"].in_units('1e10 Msol'))
+    imass4.attrs["Units"] = str(ds.star["InitialMass"].in_units('1e10 Msol').units)
     imass4.attrs["PartNum"] = ptype[4]
-    age = part4.create_dataset("Age", data=ds.star["aform"])
+    age = part4.create_dataset("StellarFormationTime", data=ds.star["aform"])
     age.attrs["Units"] = "Expansion factor, a, where star particle forms"
     age.attrs["PartNum"] = ptype[4]
-    Z = part4.create_dataset("Metallicity", data=ds.star["metals"])
-    Z.attrs["Units"] = "Mass fraction of elements heavier than Helium"
+    Z = part4.create_dataset("Metallicity", data=ds.star["smetals"])
+    Z.attrs["Units"] = "Smoothed mass fraction of elements heavier than Helium"
     Z.attrs["PartNum"] = ptype[4]
     
 hf.close()
