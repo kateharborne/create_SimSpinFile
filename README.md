@@ -1,6 +1,8 @@
 # create_SimSpinFile
 A script to take simulation files and output a new HDF5 file for use with SimSpin (https://github.com/kateharborne/SimSpin).
 
+Requires imports from [pynbody](https://github.com/pynbody/pynbody) and [h5py](https://www.h5py.org/).
+
 ```
 >> python create_SimSpinFile.py -h
 
